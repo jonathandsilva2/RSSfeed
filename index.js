@@ -1,10 +1,10 @@
-const Parser = require('rss-parser');
 const chalk = require('chalk');
+const Parser = require('rss-parser');
 const prompt = require('prompt-sync')({ sigint: true });
-const parser = new Parser();
 
 const getRSSFeed = async () => {
   const url = prompt('Please enter an RSS url: ');
+  const parser = new Parser();
 
   try {
     const feed = await parser.parseURL(url);
